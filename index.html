@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator">
+            <!-- Display Screen -->
+            <div class="display">
+                <div class="expression" id="expression"></div>
+                <div class="result" id="result">0</div>
+            </div>
+
+            <!-- Calculator Buttons Grid -->
+            <div class="buttons-grid">
+                <!-- Memory Functions Row -->
+                <button class="btn memory-btn" onclick="performAction('memory-clear')" data-testid="button-memory-clear">MC</button>
+                <button class="btn memory-btn" onclick="performAction('memory-recall')" data-testid="button-memory-recall">MR</button>
+                <button class="btn memory-btn" onclick="performAction('memory-add')" data-testid="button-memory-add">M+</button>
+                <button class="btn memory-btn" onclick="performAction('memory-subtract')" data-testid="button-memory-subtract">M-</button>
+                <button class="btn clear-btn" onclick="performAction('all-clear')" data-testid="button-all-clear">AC</button>
+
+                <!-- Scientific Functions Row 1 -->
+                <button class="btn scientific-btn" onclick="performAction('sin')" data-testid="button-sin">sin</button>
+                <button class="btn scientific-btn" onclick="performAction('cos')" data-testid="button-cos">cos</button>
+                <button class="btn scientific-btn" onclick="performAction('tan')" data-testid="button-tan">tan</button>
+                <button class="btn scientific-btn" onclick="performAction('log')" data-testid="button-log">log</button>
+                <button class="btn scientific-btn" onclick="performAction('ln')" data-testid="button-ln">ln</button>
+
+                <!-- Scientific Functions Row 2 -->
+                <button class="btn scientific-btn" onclick="performAction('asin')" data-testid="button-asin">sin⁻¹</button>
+                <button class="btn scientific-btn" onclick="performAction('acos')" data-testid="button-acos">cos⁻¹</button>
+                <button class="btn scientific-btn" onclick="performAction('atan')" data-testid="button-atan">tan⁻¹</button>
+                <button class="btn scientific-btn" onclick="performAction('exp')" data-testid="button-exp">eˣ</button>
+                <button class="btn scientific-btn" onclick="performAction('power')" data-testid="button-power">xʸ</button>
+
+                <!-- Numbers and Basic Operations Row 1 -->
+                <button class="btn scientific-btn" onclick="performAction('open-paren')" data-testid="button-open-paren">(</button>
+                <button class="btn scientific-btn" onclick="performAction('close-paren')" data-testid="button-close-paren">)</button>
+                <button class="btn scientific-btn" onclick="performAction('sqrt')" data-testid="button-sqrt">√</button>
+                <button class="btn operation-btn" onclick="performAction('clear')" data-testid="button-clear">C</button>
+                <button class="btn operation-btn" onclick="performAction('divide')" data-testid="button-divide">÷</button>
+
+                <!-- Numbers and Basic Operations Row 2 -->
+                <button class="btn scientific-btn" onclick="performAction('pi')" data-testid="button-pi">π</button>
+                <button class="btn number-btn" onclick="inputNumber('7')" data-testid="button-number-7">7</button>
+                <button class="btn number-btn" onclick="inputNumber('8')" data-testid="button-number-8">8</button>
+                <button class="btn number-btn" onclick="inputNumber('9')" data-testid="button-number-9">9</button>
+                <button class="btn operation-btn" onclick="performAction('multiply')" data-testid="button-multiply">×</button>
+
+                <!-- Numbers and Basic Operations Row 3 -->
+                <button class="btn scientific-btn" onclick="performAction('e')" data-testid="button-e">e</button>
+                <button class="btn number-btn" onclick="inputNumber('4')" data-testid="button-number-4">4</button>
+                <button class="btn number-btn" onclick="inputNumber('5')" data-testid="button-number-5">5</button>
+                <button class="btn number-btn" onclick="inputNumber('6')" data-testid="button-number-6">6</button>
+                <button class="btn operation-btn" onclick="performAction('subtract')" data-testid="button-subtract">−</button>
+
+                <!-- Numbers and Basic Operations Row 4 -->
+                <button class="btn scientific-btn" onclick="performAction('factorial')" data-testid="button-factorial">x!</button>
+                <button class="btn number-btn" onclick="inputNumber('1')" data-testid="button-number-1">1</button>
+                <button class="btn number-btn" onclick="inputNumber('2')" data-testid="button-number-2">2</button>
+                <button class="btn number-btn" onclick="inputNumber('3')" data-testid="button-number-3">3</button>
+                <button class="btn operation-btn" onclick="performAction('add')" data-testid="button-add">+</button>
+
+                <!-- Bottom Row -->
+                <button class="btn scientific-btn" onclick="performAction('negate')" data-testid="button-negate">±</button>
+                <button class="btn number-btn zero-btn" onclick="inputNumber('0')" data-testid="button-number-0">0</button>
+                <button class="btn number-btn" onclick="performAction('decimal')" data-testid="button-decimal">.</button>
+                <button class="btn equals-btn" onclick="performAction('equals')" data-testid="button-equals">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
